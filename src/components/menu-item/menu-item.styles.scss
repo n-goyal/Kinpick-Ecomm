@@ -1,6 +1,6 @@
 .menu-item {
   width: 50%;
-  height: 500px;
+  height: 30rem;
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -12,12 +12,12 @@
   // &:nth-child(-n + 2) {
   &:first-child {
     // flex: 0 0 50%;
-    height: 900px;
+    height: 70rem;
     margin-right: 7.5px;
   }
 
   &:last-child {
-    height: 800px;
+    height: 70rem;
     margin-left: 7.5px;
   }
 
@@ -60,6 +60,17 @@
       color: white;
       border: 0.5px solid black;
       background-color: black;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-item {
+    &:first-child {
+      height: 50rem;
+    }
+    &:last-child {
+      height: 50rem;
     }
   }
 }

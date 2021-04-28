@@ -9,3 +9,9 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+@media screen and (max-width: 768px) {
+  .homepage {
+    padding: 5px 10px;
+  }
+}
