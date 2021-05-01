@@ -9,15 +9,18 @@
   overflow: hidden;
   margin: 0 7.5px 15px;
 
-  // &:nth-child(-n + 2) {
-  &:first-child {
-    // flex: 0 0 50%;
-    height: 70rem;
+  &:nth-child(-n + 2) {
+    flex-wrap: wrap;
+    // &:first-child {
+    flex: 0 0.8 48%;
+    height: 65rem;
     margin-right: 7.5px;
   }
 
-  &:last-child {
-    height: 70rem;
+  &:nth-last-child(-n + 2) {
+    flex: 0 1 48%;
+    flex-wrap: wrap;
+    height: 50rem;
     margin-left: 7.5px;
   }
 
@@ -66,11 +69,15 @@
 
 @media screen and (max-width: 768px) {
   .menu-item {
-    &:first-child {
-      height: 50rem;
+    &:nth-child(-n + 2) {
+      flex-wrap: nowrap;
+      flex: 1 0 48%;
+      height: 45rem;
     }
-    &:last-child {
-      height: 50rem;
+    &:nth-last-child(-n + 2) {
+      flex-wrap: nowrap;
+      flex: 1 0 48%;
+      height: 40rem;
     }
   }
 }
