@@ -30,9 +30,9 @@ export default class SignIn extends Component {
   render() {
     return (
       <div className="sign-in">
-        <header class="header">
-          <h2 class="heading">Sign in</h2>
-          <p class="excerpt">
+        <header className="header">
+          <h2 className="heading">Sign in</h2>
+          <p className="excerpt">
             Become a member — don’t miss out on deals, offers, discounts and
             bonus vouchers.
           </p>
