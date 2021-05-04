@@ -6,6 +6,10 @@ body {
   padding-right: 1rem;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: black;
