@@ -1,18 +1,13 @@
 import React from "react";
 import "./custom-button.styles.scss";
 
-export const CustomButton = ({
-  children,
-  bgColor,
-  color,
-  size,
-  ...otherProps
-}) => {
+export const CustomButton = ({ children, ...otherProps }) => {
   return (
     <button
       style={{
-        backgroundColor: `${bgColor}`,
-        color: `${color}`,
+        backgroundColor: `${otherProps.bgColor}`,
+        borderColor: `${otherProps.bgColor}`,
+        color: `${otherProps.color}`,
       }}
       className="button large"
       {...otherProps}
