@@ -28,6 +28,30 @@
     margin-top: 2em;
   }
 
+  .divider {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.3em;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+  .divider:before,
+  .divider:after {
+    content: "  ";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    border-color: black;
+    margin-left: 15px;
+    margin-right: 15px;
+    align-self: center;
+  }
+  // .divider:before {
+  //   margin-right: 5px;
+  // }
+  // .divider:after {
+  //   margin-left: 5px;
+  // }
+
   .footer {
     padding: 1.5em;
 

@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import { FormInput } from "../form-input/form-input.component";
 import { CustomButton } from "../custom-button/custom-button.component";
 import "./sign-in.styles.scss";
+
+import { signInWithGoogle } from "../../firebase/firebase.utils";
 
 export default class SignIn extends Component {
   constructor() {
@@ -55,10 +58,25 @@ export default class SignIn extends Component {
             label="Password"
             value={this.state.password}
           />
-          <CustomButton bgColor="black" color="white" type="submit">
+          <CustomButton
+            bgColor="#c2f9bb"
+            color="black"
+            borderColor="black"
+            type="submit"
+          >
             Sign In
           </CustomButton>
-          <CustomButton bgColor="white" color="black" type="submit">
+          <CustomButton
+            bgColor="#e9eaea"
+            color="black"
+            onClick={() => {
+              signInWithGoogle();
+            }}
+          >
+            Sign In With Google
+          </CustomButton>
+          <div className="divider">OR</div>
+          <CustomButton bgColor="#ade8f4" color="black" type="submit">
             Become A Member
           </CustomButton>
         </form>
