@@ -4,11 +4,12 @@ import "./App.css";
 // import { Header as HeaderNew } from "./components/header/header.component";
 import { Homepage } from "./pages/homepage/homepage.component";
 import Shop from "./pages/shop/shop.component";
-import { SignInSignUp } from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import { Header } from "./tempshop-comps/header.comp";
 // import Shop from "./tempshop-comps/tempShop.page";
 
-import { auth } from "./firebase/firebase.utils";
+import SignUp from "./components/sign-up/sign-up.component";
+import SignIn from "./components/sign-in/sign-in.component";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends React.Component {
   constructor() {
@@ -22,9 +23,21 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot((snapShot) => {
+          this.setState({
+            user: {
+              id: snapShot.id,
+              ...snapShot.data(),
+            },
+          });
+        });
+      }
       this.setState({
-        user: user,
+        user: userAuth,
       });
     });
   }
@@ -34,7 +47,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.user);
     return (
       <div>
         {/* <HeaderNew /> */}
@@ -47,12 +59,9 @@ class App extends React.Component {
           {this.state.user ? (
             <Redirect to="/" />
           ) : (
-            <Route
-              path="/signin"
-              user={this.state.user}
-              component={SignInSignUp}
-            />
+            <Route path="/signin" user={this.state.user} component={SignIn} />
           )}
+          <Route path="/signup" user={this.state.user} component={SignUp} />
         </Switch>
       </div>
     );
