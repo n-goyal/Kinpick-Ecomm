@@ -2,7 +2,6 @@ import React from "react";
 import "./form-input.styles.scss";
 
 export const FormInput = ({ handleChange, label, ...otherProps }) => {
-  console.log(otherProps, label);
   return (
     <div className="input-wrapper">
       <label className="label">{label}</label>
