@@ -1,27 +1,98 @@
-.header {
-  max-width: 75rem;
-  height: 70px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Kufam&display=swap"); */
+
+.header-wrapper {
   margin-left: auto;
   margin-right: auto;
+  max-width: 75rem;
+  font-family: "Roboto", sans-serif;
+  /* font-family: "Kufam", "cursive"; */
+  letter-spacing: 0.01em;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 
-  .logo-container {
-    height: 100%;
-    width: 70px;
-    padding: 25px;
-  }
+.header {
+  height: 70%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
 
-  .options {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+.menu__session {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  right: 4%;
+  top: 1;
+}
 
-    .option {
-      padding: 10px 15px;
-    }
-  }
+.menu__item {
+  overflow: visible;
+  opacity: 1;
+  cursor: pointer;
+  position: relative;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  display: block;
+  height: auto;
+  margin: 0 7px;
+  font-size: 1.3em;
+  letter-spacing: 00.05em;
+}
+
+.menu__super:hover > a {
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.menu__super {
+  display: inline-block;
+  padding: 0 10px;
+  white-space: normal;
+  word-break: break-word;
+}
+
+ul {
+  padding: 0;
+}
+
+.menu__super-link {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.menu__primary {
+  display: flex;
+  justify-content: center;
+}
+
+.menu__hm {
+  display: block;
+  width: 200px;
+  height: 50px;
+  text-indent: -9999px;
+  /* overflow: hidden; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.menu__hm::before {
+  background-image: url("../../assests/icons8-fashion-hat-64.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: block;
+  height: 100%;
+  width: auto;
 }

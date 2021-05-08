@@ -1,21 +1,57 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./header.styles.scss";
-import { ReactComponent as Logo } from "../../assests/crown.svg";
+import { auth } from "../../firebase/firebase.utils";
 
-export const Header = () => {
+export const Header = ({ user }) => {
   return (
-    <div className="header">
-      <Link to="/" className="logo-container">
-        <Logo className="logo" />
-      </Link>
-      <div className="options">
-        <Link className="option" to="/shop">
-          Shop
-        </Link>
-        <Link className="option" to="/contact">
-          Contact
-        </Link>
+    <div className="header-wrapper">
+      <ul className="menu__session">
+        <li className="menu__item">
+          {user ? (
+            <Link
+              to="/"
+              onClick={() => {
+                auth.signOut();
+              }}
+            >
+              Sign Out
+            </Link>
+          ) : (
+            <Link to="/signin">Sign In</Link>
+          )}
+        </li>
+        <li className="menu__item">Favourites</li>
+        <li className="menu__item">Shopping Bag(0)</li>
+      </ul>
+      <div className="header">
+        <div>
+          <Link to="/" className="menu__hm"></Link>
+        </div>
+        <nav className="menu__primary">
+          <ul>
+            <li className="menu__super">
+              <Link className="menu__super-link" to="/shop/en_in/women">
+                <span>Women</span>
+              </Link>
+            </li>
+            <li className="menu__super">
+              <Link className="menu__super-link" to="/shop/en_in/men">
+                <span>Men</span>
+              </Link>
+            </li>
+            <li className="menu__super">
+              <Link className="menu__super-link" to="/shop/en_in/kids">
+                <span>Kids</span>
+              </Link>
+            </li>
+            <li className="menu__super">
+              <Link className="menu__super-link" to="/shop/en_in/sale">
+                <span>Sale</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   );

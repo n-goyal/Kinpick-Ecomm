@@ -1,11 +1,10 @@
 import React from "react";
-import { Switch, Route, withRouter, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
-// import { Header as HeaderNew } from "./components/header/header.component";
+import { Header } from "./components/header/header.component";
 import { Homepage } from "./pages/homepage/homepage.component";
-import Shop from "./pages/shop/shop.component";
-import { Header } from "./tempshop-comps/header.comp";
-// import Shop from "./tempshop-comps/tempShop.page";
+// import Shop from "./pages/shop/shop.component";
+import Shop from "./tempshop-comps/tempShop.page";
 
 import SignUp from "./components/sign-up/sign-up.component";
 import SignIn from "./components/sign-in/sign-in.component";
@@ -54,9 +53,7 @@ class App extends React.Component {
         <Header user={this.state.user} />
         <Switch>
           <Route exact path="/" component={Homepage} />
-          {/* withRouter( */}
-          <Route path="/shop" component={Shop} />
-          {/* ) */}
+          <Route path="/shop/en_in/:type" component={Shop} />
           {this.state.user ? (
             <Redirect to="/" />
           ) : (
