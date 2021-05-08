@@ -1,6 +1,6 @@
 import React from "react";
 import "./banner.styles.scss";
-import { LinkButton } from "../link-button/link-button.component";
+import LinkButton from "../link-button/link-button.component";
 
 export const Banner = ({
   headline,
