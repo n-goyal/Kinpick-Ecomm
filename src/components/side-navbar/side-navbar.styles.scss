@@ -1,0 +1,18 @@
+.side-nav {
+  font-size: 1.2em;
+  max-width: 20%;
+  left: 5%;
+  position: absolute;
+  margin: 0;
+
+  ul {
+    list-style: none;
+
+    li {
+      padding-left: 0.8em;
+      padding-right: 0.8em;
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+    }
+  }
+}

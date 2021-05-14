@@ -3,6 +3,7 @@ import { useParams, useRouteMatch, Switch, Route } from "react-router";
 import Catelogue from "../../components/catelogue/catelogue.component";
 import SideNavigation from "../../components/side-navbar/side-navbar.component";
 import data from "../../H&MConsolidated";
+import "./shop.styles.scss";
 
 export const Shop = () => {
   const [collection, setCollection] = useState([]);
@@ -30,9 +31,11 @@ export const Shop = () => {
       ) : null}
 
       <Switch>
+        {/* default view */}
         <Route exact path={path}>
-          <h3>Please select a topic.</h3>
+          <Catelogue className="catelgoue-product-view" />
         </Route>
+        {/* selelcted category listing */}
         <Route path={`${path}/:section/:category`}>
           <Catelogue className="catelgoue-product-view" />
         </Route>
