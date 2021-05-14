@@ -3,8 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import { Header } from "./components/header/header.component";
 import { Homepage } from "./pages/homepage/homepage.component";
-// import Shop from "./pages/shop/shop.component";
-import Shop from "./tempshop-comps/tempShop.page";
+import Shop from "./pages/shop/shop.component";
 
 import SignUp from "./components/sign-up/sign-up.component";
 import SignIn from "./components/sign-in/sign-in.component";
@@ -49,7 +48,6 @@ class App extends React.Component {
     console.log(this.state);
     return (
       <div>
-        {/* <HeaderNew /> */}
         <Header user={this.state.user} />
         <Switch>
           <Route exact path="/" component={Homepage} />
