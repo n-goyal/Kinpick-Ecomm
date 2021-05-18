@@ -9,11 +9,11 @@ export const SideNavigation = ({ collection }) => {
 
   return (
     <div className="side-nav">
-      <h2 className="catelogue-title">{title}</h2>
+      {/* <h2 className="catelogue-title">{title}</h2> */}
       {items.map(({ categoryName, categoryItems }) => (
         <div>
           {console.log(categoryName, categoryItems)}
-          <h3>{categoryName}</h3>
+          <h2>{categoryName}</h2>
           <ul>
             {categoryItems.map(({ slug, name, routeName }) => (
               <li key={slug}>
