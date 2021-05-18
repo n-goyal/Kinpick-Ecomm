@@ -1,0 +1,19 @@
+.catalogue {
+  //   left: 18%;
+  //   position: absolute;
+  max-width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+
+  .products-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .banner {
+    margin: 0 !important;
+    font-size: 1em !important;
+    // background-color: #bbf7df;
+  }
+}
