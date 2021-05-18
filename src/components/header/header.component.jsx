@@ -7,7 +7,7 @@ export const Header = ({ user }) => {
   return (
     <div className="header-wrapper">
       <ul className="menu__session">
-        <li className="menu__item">
+        <li className="menu__item sign-in-icon">
           {user ? (
             <Link
               to="/"
@@ -21,8 +21,8 @@ export const Header = ({ user }) => {
             <Link to="/signin">Sign In</Link>
           )}
         </li>
-        <li className="menu__item">Favourites</li>
-        <li className="menu__item">Shopping Bag(0)</li>
+        <li className="menu__item favorites-icon">Favourites</li>
+        <li className="menu__item bag-icon">Shopping Bag(0)</li>
       </ul>
       <div className="header">
         <div>
