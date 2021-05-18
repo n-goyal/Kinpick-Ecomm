@@ -8,9 +8,16 @@ export const Banner = ({
   links,
   headlineColor,
   bgColor,
+  bgImage,
 }) => {
+  bgImage = bgImage ? `${bgImage}` : null;
+  // bgColor = bgImage ? null : `${bgImage}`;
+
   return (
-    <section style={{ backgroundColor: `${bgColor}` }} className="banner">
+    <section
+      style={{ backgroundImage: `${bgImage}`, backgroundColor: `${bgColor}` }}
+      className="banner"
+    >
       <div className="banner-container">
         <article className="banner-content">
           <h2 style={{ color: `${headlineColor}` }}>{headline}</h2>
