@@ -1,14 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./header.styles.scss";
+import { connect } from "react-redux";
+
 import { auth } from "../../firebase/firebase.utils";
 
-export const Header = ({ user }) => {
+import "./header.styles.scss";
+
+const Header = (user) => {
+  console.log(user.user);
   return (
     <div className="header-wrapper">
       <ul className="menu__session">
         <li className="menu__item sign-in-icon">
-          {user ? (
+          {user.user ? (
             <Link
               to="/"
               onClick={() => {
@@ -56,3 +60,9 @@ export const Header = ({ user }) => {
     </div>
   );
 };
+
+const mapStateToProps = (state) => ({
+  user: state.user.user,
+});
+
+export default connect(mapStateToProps)(Header);
