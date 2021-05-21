@@ -4,15 +4,17 @@ import { connect } from "react-redux";
 
 import { auth } from "../../firebase/firebase.utils";
 
+import ShoppingCart from "../cart-icon/cart-icon.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import "./header.styles.scss";
 
-const Header = (user) => {
-  console.log(user.user);
+const Header = ({ user, hidden }) => {
+  console.log(user);
   return (
     <div className="header-wrapper">
       <ul className="menu__session">
         <li className="menu__item sign-in-icon">
-          {user.user ? (
+          {user ? (
             <Link
               to="/"
               onClick={() => {
@@ -26,8 +28,11 @@ const Header = (user) => {
           )}
         </li>
         <li className="menu__item favorites-icon">Favourites</li>
-        <li className="menu__item bag-icon">Shopping Bag(0)</li>
+        <li className="menu__item bag-icon">
+          <ShoppingCart />
+        </li>
       </ul>
+      {hidden ? null : <CartDropdown />}
       <div className="header">
         <div>
           <Link to="/" className="menu__hm"></Link>
@@ -61,8 +66,9 @@ const Header = (user) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  user: state.user.user,
+const mapStateToProps = ({ user: { user }, cart: { hidden } }) => ({
+  user,
+  hidden,
 });
 
 export default connect(mapStateToProps)(Header);
