@@ -2,7 +2,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Banner } from "../banner/banner.component";
-import { ProductCard } from "../product-card/product-card.component";
+import ProductCard from "../product-card/product-card.component";
 import "./catelogue.styles.scss";
 import data from "./tempData.json";
 
@@ -24,6 +24,14 @@ const bannerDetails = {
   ],
 };
 
+const item = {
+  productName: "White T-Shirt",
+  price: 399,
+  imageUrl:
+    "https://lp2.hm.com/hmgoepprod?set=source[/22/8a/228a6bcb3c2ec2d28d75799ef0163949e889cdb3.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[y],hmver[1]&amp;call=url[file:/product/main]",
+  id: 1,
+};
+
 const Catelogue = () => {
   const { section, category } = useParams();
   console.log(section, category);
@@ -39,18 +47,18 @@ const Catelogue = () => {
         <div className="products-wrapper">
           <Banner {...bannerDetails} />
 
-          <ProductCard productName="White T-Shirt" />
-          <ProductCard productName="White T-Shirt" />
-          <ProductCard productName="White T-Shirt" />
-          <ProductCard productName="White T-Shirt" />
-          <ProductCard productName="White T-Shirt" />
-          <ProductCard productName="White T-Shirt" />
-          <ProductCard productName="White T-Shirt" />
-          <ProductCard productName="White T-Shirt" />
-          <ProductCard productName="White T-Shirt" />
-          <ProductCard productName="White T-Shirt" />
-          <ProductCard productName="White T-Shirt" />
-          <ProductCard productName="White T-Shirt" />
+          <ProductCard item={item} />
+          <ProductCard item={item} />
+          <ProductCard item={item} />
+          <ProductCard item={item} />
+          <ProductCard item={item} />
+          <ProductCard item={item} />
+          <ProductCard item={item} />
+          <ProductCard item={item} />
+          <ProductCard item={item} />
+          <ProductCard item={item} />
+          <ProductCard item={item} />
+          <ProductCard item={item} />
         </div>
       )}
     </div>
