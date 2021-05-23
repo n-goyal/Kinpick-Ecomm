@@ -1,0 +1,125 @@
+{
+  "_id": "h_m",
+  "startUrl": [
+    "https://www2.hm.com/en_in/men/shop-by-product/shirts.html?sort=stock&image-size=small&image=model&offset=0&page-size=396"
+  ],
+  "selectors": [
+    {
+      "id": "listing",
+      "type": "SelectorElementClick",
+      "parentSelectors": ["_root"],
+      "selector": "div.item-details",
+      "multiple": true,
+      "delay": "2000",
+      "clickElementSelector": "button.js-load-more",
+      "clickType": "clickMore",
+      "discardInitialElements": "do-not-discard",
+      "clickElementUniquenessType": "uniqueHTMLText"
+    },
+    {
+      "id": "link",
+      "type": "SelectorLink",
+      "parentSelectors": ["listing"],
+      "selector": "a.link",
+      "multiple": false,
+      "delay": 0
+    },
+    {
+      "id": "name",
+      "type": "SelectorText",
+      "parentSelectors": ["link"],
+      "selector": "h1.primary",
+      "multiple": false,
+      "regex": "",
+      "delay": 0
+    },
+    {
+      "id": "price",
+      "type": "SelectorText",
+      "parentSelectors": ["link"],
+      "selector": "span.price-value",
+      "multiple": false,
+      "regex": "",
+      "delay": 0
+    },
+    {
+      "id": "description",
+      "type": "SelectorText",
+      "parentSelectors": ["link"],
+      "selector": "div.pdp-text",
+      "multiple": false,
+      "regex": "",
+      "delay": 0
+    },
+    {
+      "id": "review_count",
+      "type": "SelectorText",
+      "parentSelectors": ["link"],
+      "selector": "span.reviews-number",
+      "multiple": false,
+      "regex": "\\(.*?\\)",
+      "delay": 0
+    },
+    {
+      "id": "details",
+      "type": "SelectorText",
+      "parentSelectors": ["link"],
+      "selector": "div.product-details-details",
+      "multiple": false,
+      "regex": "",
+      "delay": 0
+    },
+    {
+      "id": "img1",
+      "type": "SelectorImage",
+      "parentSelectors": ["link"],
+      "selector": ".product-detail-main-image-container img",
+      "multiple": false,
+      "delay": 0
+    },
+    {
+      "id": "img2",
+      "type": "SelectorImage",
+      "parentSelectors": ["link"],
+      "selector": "img.product-detail-thumbnail-image",
+      "multiple": false,
+      "delay": 0
+    },
+    {
+      "id": "style",
+      "type": "SelectorText",
+      "parentSelectors": ["link"],
+      "selector": "dt:contains('Style') + dd",
+      "multiple": false,
+      "regex": "",
+      "delay": 0
+    },
+    {
+      "id": "generic name",
+      "type": "SelectorText",
+      "parentSelectors": ["link"],
+      "selector": "dt:contains('Common generic name') + dd",
+      "multiple": false,
+      "regex": "",
+      "delay": 0
+    },
+    {
+      "id": "colors",
+      "type": "SelectorText",
+      "parentSelectors": ["link"],
+      "selector": "dt:contains('Description') + dd",
+      "multiple": false,
+      "regex": "",
+      "delay": 0
+    },
+    {
+      "id": "descript",
+      "type": "SelectorText",
+      "parentSelectors": ["link"],
+      "selector": "div:nth-of-type(6) dd:nth-of-type(2)",
+      "multiple": false,
+      "regex": "",
+      "delay": 0
+    }
+  ]
+}
