@@ -51,7 +51,7 @@ fs.readdir(directoryPath, function (err, files) {
         return console.log(err);
       }
 
-      console.log("JSON file has been saved.");
+      console.log(`${file} JSON file has been saved.`);
     });
   });
 });
