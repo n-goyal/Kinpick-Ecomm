@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams, useRouteMatch, Switch, Route } from "react-router";
 import Catelogue from "../../components/catelogue/catelogue.component";
 import SideNavigation from "../../components/side-navbar/side-navbar.component";
-import data from "../../H&MConsolidated";
+import data from "./H&MConsolidated";
 import "./shop.styles.scss";
 
 export const Shop = () => {

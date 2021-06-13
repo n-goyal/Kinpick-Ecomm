@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { Banner } from "../banner/banner.component";
 import ProductCard from "../product-card/product-card.component";
 import "./catelogue.styles.scss";
-import data from "./tempData.json";
 
 const bannerDetails = {
   headline: "Checkout the classic go-to Jeans!",
