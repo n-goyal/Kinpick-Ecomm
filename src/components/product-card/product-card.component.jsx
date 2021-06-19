@@ -12,17 +12,14 @@ const ProductCard = ({ item, addItem }) => {
     <div class="product">
       <div className="image-container">
         <Link to="/:productName">
-          <img
-            src="https://lp2.hm.com/hmgoepprod?set=source[/22/8a/228a6bcb3c2ec2d28d75799ef0163949e889cdb3.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[y],hmver[1]&amp;call=url[file:/product/main]"
-            alt={item.productName}
-          />
+          <img src={item.image1url} alt={item.name} />
         </Link>
       </div>
       <div className="item-details">
         <div className="item-price">
-          <div className="item-heading">{item.productName}</div>
+          <div className="item-heading">{item.name}</div>
           <div>
-            Rs.<span>{item.price}</span>
+            <span>{item.price}</span>
           </div>
         </div>
         <div className="icon-favorites favorite"></div>

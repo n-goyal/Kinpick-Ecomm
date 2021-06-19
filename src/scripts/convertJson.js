@@ -3,19 +3,23 @@ const fs = require("fs");
 
 //joining path of directory
 const directoryPath = path.join(__dirname, "../assests/jsonData/men");
+
 //passsing directoryPath and callback function
 fs.readdir(directoryPath, function (err, files) {
   //handling error
   if (err) {
     return console.log("Unable to scan directory: " + err);
   }
+
   //listing all files using forEach
   files.forEach(function (file) {
     // process file
     const parsedJson = [];
     const filePath = path.join(__dirname, "../assests/jsonData/men/" + file);
+
     // 1. read json object from scrapped files
     const data = require(filePath);
+
     // 2. parse it to new json object
     data.map(
       ({
@@ -45,7 +49,8 @@ fs.readdir(directoryPath, function (err, files) {
     // 3. save results in new json file
     var jsonContent = JSON.stringify(parsedJson);
 
-    fs.writeFile(`${file}_scrape.json`, jsonContent, "utf8", function (err) {
+    const resPath = path.join(__dirname, `../assests/data/men/${file}`);
+    fs.writeFile(resPath, jsonContent, "utf8", function (err) {
       if (err) {
         console.log("An error occured while writing JSON Object to File.");
         return console.log(err);

@@ -26,7 +26,7 @@ const bannerDetails = {
 const item = {
   productName: "White T-Shirt",
   price: 399,
-  imageUrl:
+  image1Url:
     "https://lp2.hm.com/hmgoepprod?set=source[/22/8a/228a6bcb3c2ec2d28d75799ef0163949e889cdb3.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[DESCRIPTIVESTILLLIFE],res[y],hmver[1]&amp;call=url[file:/product/main]",
   id: 1,
 };
@@ -34,8 +34,19 @@ const item = {
 const Catelogue = () => {
   const { section, category } = useParams();
   console.log(section, category);
+
+  const data = require(`./../../assests/data/men/${category}.json`);
+
+  console.log(data);
   return (
     <div className="catalogue">
+      <div className="products-wrapper">
+        <Banner {...bannerDetails} />
+
+        {data.map((item) => {
+          return <ProductCard key={item.it} item={item} />;
+        })}
+      </div>
       {section || category ? (
         <p>
           Looking for product catelogue of <strong>{category}</strong> in{" "}
@@ -46,18 +57,9 @@ const Catelogue = () => {
         <div className="products-wrapper">
           <Banner {...bannerDetails} />
 
-          <ProductCard item={item} />
-          <ProductCard item={item} />
-          <ProductCard item={item} />
-          <ProductCard item={item} />
-          <ProductCard item={item} />
-          <ProductCard item={item} />
-          <ProductCard item={item} />
-          <ProductCard item={item} />
-          <ProductCard item={item} />
-          <ProductCard item={item} />
-          <ProductCard item={item} />
-          <ProductCard item={item} />
+          {data.map((item) => {
+            return <ProductCard key={item.it} item={item} />;
+          })}
         </div>
       )}
     </div>
