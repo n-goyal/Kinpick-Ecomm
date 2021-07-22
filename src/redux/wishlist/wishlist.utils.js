@@ -11,3 +11,13 @@ export const addWishlistItems = (wishlistItems, wishlistItemsToAdd) => {
   // otherwise add
   return [...wishlistItems, wishlistItemsToAdd];
 };
+
+export const removeWishlistItem = (wishlistItems, itemsToRemove) => {
+  // filter itemToRemove from wishlistItems array
+  // eslint-disable-next-line array-callback-return
+  const updatedWishlist = wishlistItems.filter((item) => {
+    if (item.id !== itemsToRemove.id) return item;
+  });
+
+  return updatedWishlist;
+};

@@ -1,7 +1,12 @@
 import { wishlistActionTypes } from "./wishlist.types";
-import { addWishlistItems } from "./wishlist.utils";
+import { addWishlistItems, removeWishlistItem } from "./wishlist.utils";
 
-const { ADD_ITEM_To_WISHLIST, TOGGLE_WISHLIST_DROPDOWN } = wishlistActionTypes;
+const {
+  ADD_ITEM_To_WISHLIST,
+  TOGGLE_WISHLIST_DROPDOWN,
+  MOVE_ITEM_WISHLIST_TO_CART,
+  REMOVE_ITEM_FROM_WISHLIST,
+} = wishlistActionTypes;
 
 const INITIAL_STATE = {
   hideWishlist: false,
@@ -22,6 +27,19 @@ const wishlistReducer = (state = INITIAL_STATE, action) => {
         ...state,
         hideWishlist: !state.hideWishlist,
       };
+
+    case MOVE_ITEM_WISHLIST_TO_CART:
+      return {
+        ...state,
+        wishlistItems: removeWishlistItem(state.wishlistItems, action.payload),
+      };
+
+    case REMOVE_ITEM_FROM_WISHLIST:
+      return {
+        ...state,
+        wishlistItems: removeWishlistItem(state.wishlistItems, action.payload),
+      };
+
     default:
       return state;
   }

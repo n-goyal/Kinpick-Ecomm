@@ -15,3 +15,27 @@ export const addItemsToCart = (cartItems, cartItemToAdd) => {
 
   return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 };
+
+export const removeItemFromCart = (cartItems, itemToRemove) => {
+  // filter the cartItems and remove the item
+  // eslint-disable-next-line array-callback-return
+  const updatedCartItems = cartItems.filter((item) => {
+    if (item.id !== itemToRemove.id) return item;
+  });
+  return updatedCartItems;
+};
+
+export const moveItemFromWishlist = (cartItems, itemToMove) => {
+  const existingCartItems = cartItems.find((item) => item.id === itemToMove.id);
+
+  // if exist already don't add, otherwise add item to cartItems with quantity = 1.
+  return existingCartItems
+    ? cartItems
+    : [
+        ...cartItems,
+        {
+          ...itemToMove,
+          quantity: 1,
+        },
+      ];
+};
