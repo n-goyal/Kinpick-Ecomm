@@ -20,13 +20,24 @@ const CartDropdown = ({ cartItems, history }) => {
           <span className="empty-message">Your Cart Is Empty!</span>
         )}
       </div>
-      <CustomButton
-        bgColor="#ade8f4"
-        color="black"
-        onClick={() => history.push("/checkout")}
-      >
-        Go To Checkout
-      </CustomButton>
+      <div className="btn-actions">
+        <CustomButton
+          bgColor="#ade8f4"
+          color="black"
+          className="empty-message"
+          onClick={() => history.push("/checkout")}
+        >
+          Checkout
+        </CustomButton>
+        <CustomButton
+          bgColor="black"
+          color="white"
+          className="empty-message"
+          onClick={() => history.push("/bag")}
+        >
+          Shopping Bag
+        </CustomButton>
+      </div>
     </div>
   );
 };

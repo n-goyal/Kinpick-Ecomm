@@ -1,0 +1,15 @@
+.item-container {
+  max-width: 55%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.item-sizing {
+  height: 550px;
+
+  button {
+    height: auto !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}

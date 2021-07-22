@@ -32,7 +32,9 @@ const Header = ({ user, hidden }) => {
             <Link to="/signin">Sign In</Link>
           )}
         </li>
-        <li className="menu__item favorites-icon">Favourites</li>
+        <li className="menu__item favorites-icon">
+          <Link to="/wishlist">Favourites</Link>
+        </li>
         <li className="menu__item bag-icon">
           <ShoppingCart />
         </li>
