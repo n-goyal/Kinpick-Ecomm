@@ -1,8 +1,13 @@
 import React from "react";
+import { connect } from "react-redux";
+import { removeCartItem } from "../../redux/cart/cart.actions";
+import { CustomButton } from "../custom-button/custom-button.component";
 
 import "./cart-item.styles.scss";
 
-const CartItem = ({ item: { name, image1url, price, quantity } }) => {
+const CartItem = ({ item, removeCartItem }) => {
+  const { name, image1url, price, quantity } = item;
+  console.log(item.id);
   return (
     <div className="cart-item">
       <img src={image1url} alt={name} />
@@ -12,8 +17,23 @@ const CartItem = ({ item: { name, image1url, price, quantity } }) => {
           {quantity} X {price}
         </span>
       </div>
+
+      <CustomButton
+        onClick={() => {
+          removeCartItem(item);
+        }}
+        bgColor="#ade8f4"
+        color="black"
+        className="button"
+      >
+        Remove From Cart
+      </CustomButton>
     </div>
   );
 };
 
-export default CartItem;
+const mapDispatchToProps = (dispatch) => ({
+  removeCartItem: (item) => dispatch(removeCartItem(item)),
+});
+
+export default connect(null, mapDispatchToProps)(CartItem);
