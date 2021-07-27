@@ -22,7 +22,8 @@ const CartDropdown = ({ cartItems, history }) => {
       </div>
       <div className="btn-actions">
         <CustomButton
-          bgColor="#ade8f4"
+          bgColor="white"
+          bdColor="black"
           color="black"
           className="empty-message"
           onClick={() => history.push("/checkout")}

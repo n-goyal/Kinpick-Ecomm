@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { connect } from "react-redux";
 
-import ProductCard from "../product-card/product-card.component";
+// import ProductCard from "../product-card/product-card.component";
 import { removeItemFromWishlist } from "../../redux/wishlist/wishlist.actions";
 import { moveItemWishlistToCart } from "../../redux/wishlist/wishlist.actions";
 
@@ -13,30 +15,46 @@ const WishlistItem = ({
   removeItemFromWishlist,
   moveItemWishlistToCart,
 }) => {
+  // modified product card component - styles are same as that of product card
   return (
     <div className="item-sizing">
-      <ProductCard item={item} />
-      <CustomButton
-        onClick={() => {
-          // add to cart
-          moveItemWishlistToCart(item);
-        }}
-        bgColor="#ade8f4"
-        color="black"
-        className="button"
-      >
-        Move Item To Cart
-      </CustomButton>
-      <CustomButton
-        onClick={() => {
-          removeItemFromWishlist(item);
-        }}
-        bgColor="#ade8f4"
-        color="black"
-        className="button"
-      >
-        Remove Item From Wishlist
-      </CustomButton>
+      <div className="product">
+        <div className="image-container">
+          <Link to="/:productName">
+            <img src={item.image1url} alt={item.name} />
+          </Link>
+        </div>
+        <div className="item-details">
+          <div className="item-price">
+            <div className="item-heading">{item.name}</div>
+            <div>
+              <span>{item.price}</span>
+            </div>
+          </div>
+        </div>
+        <CustomButton
+          onClick={() => {
+            // add to cart
+            moveItemWishlistToCart(item);
+          }}
+          bgColor="white"
+          color="black"
+          bdColor="black"
+          className="button"
+        >
+          Move Item To Cart
+        </CustomButton>
+        <CustomButton
+          onClick={() => {
+            removeItemFromWishlist(item);
+          }}
+          bgColor="black"
+          color="white"
+          className="button"
+        >
+          Remove Item From Wishlist
+        </CustomButton>
+      </div>
     </div>
   );
 };

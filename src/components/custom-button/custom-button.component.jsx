@@ -6,7 +6,9 @@ export const CustomButton = ({ children, ...otherProps }) => {
     <button
       style={{
         backgroundColor: `${otherProps.bgColor}`,
-        borderColor: `${otherProps.bgColor}`,
+        borderColor: `${
+          otherProps.bdColor ? otherProps.bdColor : otherProps.bgColor
+        }`,
         color: `${otherProps.color}`,
       }}
       className="button large"

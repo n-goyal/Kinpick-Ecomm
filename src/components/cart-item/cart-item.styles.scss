@@ -7,12 +7,36 @@
   padding-bottom: 20px;
 
   img {
-    width: 30%;
+    width: 28%;
     height: 100%;
   }
 
+  .icon-container {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #f2f2f2;
+    align-items: center;
+
+    &:hover {
+      background: #c2c2c270;
+    }
+  }
+
+  .delete-icon {
+    align-self: center;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .item-details {
-    width: 50%;
+    width: 28%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
