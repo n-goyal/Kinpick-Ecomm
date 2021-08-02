@@ -10,6 +10,7 @@ const {
   ADD_ITEM,
   MOVE_ITEM_WISHLIST_TO_CART,
   REMOVE_ITEM_FROM_CART,
+  MOVE_ITEM_CART_TO_WISHLIST,
 } = cartActionTypes;
 
 const INITIAL_STATE = {
@@ -36,6 +37,13 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       };
 
     case REMOVE_ITEM_FROM_CART:
+      return {
+        ...state,
+        cartItems: removeItemFromCart(state.cartItems, action.payload),
+      };
+
+    case MOVE_ITEM_CART_TO_WISHLIST:
+      console.log("caught action moving to wishlist");
       return {
         ...state,
         cartItems: removeItemFromCart(state.cartItems, action.payload),

@@ -5,6 +5,7 @@ const {
   TOGGLE_WISHLIST_DROPDOWN,
   MOVE_ITEM_WISHLIST_TO_CART,
   REMOVE_ITEM_FROM_WISHLIST,
+  
 } = wishlistActionTypes;
 
 export const addItemToWishlist = (item) => ({

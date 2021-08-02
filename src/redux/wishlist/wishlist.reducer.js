@@ -6,6 +6,7 @@ const {
   TOGGLE_WISHLIST_DROPDOWN,
   MOVE_ITEM_WISHLIST_TO_CART,
   REMOVE_ITEM_FROM_WISHLIST,
+  MOVE_ITEM_CART_TO_WISHLIST,
 } = wishlistActionTypes;
 
 const INITIAL_STATE = {
@@ -38,6 +39,12 @@ const wishlistReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         wishlistItems: removeWishlistItem(state.wishlistItems, action.payload),
+      };
+
+    case MOVE_ITEM_CART_TO_WISHLIST:
+      return {
+        ...state,
+        wishlistItems: addWishlistItems(state.wishlistItems, action.payload),
       };
 
     default:

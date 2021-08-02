@@ -1,11 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-import { removeCartItem } from "../../redux/cart/cart.actions";
+import {
+  removeCartItem,
+  moveItemToWishlist,
+} from "../../redux/cart/cart.actions";
 import { CustomButton } from "../custom-button/custom-button.component";
 
 import "./cart-item.styles.scss";
 
-const CartItem = ({ item, removeCartItem }) => {
+const CartItem = ({ item, removeCartItem, moveItemToWishlist }) => {
   const { name, image1url, price, quantity } = item;
   console.log(item.id);
   return (
@@ -20,8 +23,7 @@ const CartItem = ({ item, removeCartItem }) => {
       <div
         className="icon-container"
         onClick={() => {
-          console.log(`move item to wishlist`);
-          console.log(name, image1url, price, quantity);
+          moveItemToWishlist(item);
         }}
       >
         <svg
@@ -58,6 +60,7 @@ const CartItem = ({ item, removeCartItem }) => {
 
 const mapDispatchToProps = (dispatch) => ({
   removeCartItem: (item) => dispatch(removeCartItem(item)),
+  moveItemToWishlist: (item) => dispatch(moveItemToWishlist(item)),
 });
 
 export default connect(null, mapDispatchToProps)(CartItem);
