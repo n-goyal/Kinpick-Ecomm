@@ -1,14 +1,25 @@
-.cart-item {
+.checkout-item {
   width: 100%;
   display: flex;
+  min-height: 80px;
+  border-bottom: 1px solid darkgrey;
+  padding: 15px 0;
+  font-size: 1.2em;
   align-items: center;
-  justify-content: space-around;
-  max-height: 150px;
-  padding-bottom: 20px;
 
-  img {
-    width: 28%;
-    height: 100%;
+  .image-container {
+    width: 23%;
+    padding-right: 0;
+
+    img {
+      width: 80%;
+      height: 100%;
+    }
+  }
+  .name,
+  .quantity,
+  .price {
+    width: 23%;
   }
 
   .icon-container {
@@ -24,7 +35,7 @@
     &:hover {
       background: #c2c2c270;
     }
-    
+
     .icon {
       align-self: center;
       vertical-align: middle;
@@ -32,21 +43,6 @@
       width: 20px;
       margin-left: auto;
       margin-right: auto;
-    }
-  }
-
-
-  .item-details {
-    width: 28%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 10px 10px;
-
-    .name {
-      font-size: 14px;
-      font-weight: lighter;
     }
   }
 }

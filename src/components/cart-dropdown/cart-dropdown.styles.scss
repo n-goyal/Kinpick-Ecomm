@@ -15,6 +15,7 @@
     display: box;
     height: auto;
     overflow: scroll;
+    text-align: center;
   }
 
   .btn-actions {
@@ -27,8 +28,8 @@
   }
 
   .empty-message {
-    font-size: 13px;
-    vertical-align: middle;
+    font-size: 15px;
+    margin: 0 auto;
     text-align: center;
   }
 }

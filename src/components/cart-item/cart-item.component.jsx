@@ -27,7 +27,7 @@ const CartItem = ({ item, removeCartItem, moveItemToWishlist }) => {
         }}
       >
         <svg
-          className="delete-icon"
+          className="icon"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -43,7 +43,7 @@ const CartItem = ({ item, removeCartItem, moveItemToWishlist }) => {
         }}
       >
         <svg
-          className="delete-icon"
+          className="icon"
           viewBox="0 0 14 16"
           xmlns="http://www.w3.org/2000/svg"
           focusable="false"

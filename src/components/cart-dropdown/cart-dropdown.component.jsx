@@ -7,10 +7,11 @@ import { selectCartItems } from "../../redux/cart/cart.selectors";
 
 import CartItem from "../cart-item/cart-item.component";
 import { CustomButton } from "../custom-button/custom-button.component";
+import { toggleCartDropdown } from "../../redux/cart/cart.actions";
 
 import "./cart-dropdown.styles.scss";
 
-const CartDropdown = ({ cartItems, history }) => {
+const CartDropdown = ({ cartItems, history, dispatch }) => {
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
@@ -26,7 +27,10 @@ const CartDropdown = ({ cartItems, history }) => {
           bdColor="black"
           color="black"
           className="empty-message"
-          onClick={() => history.push("/checkout")}
+          onClick={() => {
+            history.push("/checkout");
+            dispatch(toggleCartDropdown());
+          }}
         >
           Checkout
         </CustomButton>
@@ -34,7 +38,10 @@ const CartDropdown = ({ cartItems, history }) => {
           bgColor="black"
           color="white"
           className="empty-message"
-          onClick={() => history.push("/bag")}
+          onClick={() => {
+            history.push("/bag");
+            dispatch(toggleCartDropdown());
+          }}
         >
           Shopping Bag
         </CustomButton>
@@ -46,5 +53,12 @@ const CartDropdown = ({ cartItems, history }) => {
 const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
 });
+
+// connect by default passes dispatch if mapDispatchToProps is not provided
+// hence using this for our advantage
+
+// const mapDispatchToProps = (dispatch) => ({
+//   toggleCartDropdown: () => dispatch(toggleCartDropdown()),
+// });
 
 export default withRouter(connect(mapStateToProps)(CartDropdown));

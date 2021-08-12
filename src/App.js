@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import "./App.css";
 
 import Header from "./components/header/header.component";
+import Footer from "./components/footer/footer.component";
 import { Homepage } from "./pages/homepage/homepage.component";
 import Shop from "./pages/shop/shop.component";
 import SignUp from "./components/sign-up/sign-up.component";
@@ -64,6 +65,7 @@ class App extends React.Component {
             render={() => (this.props.user ? <Redirect to="/" /> : <SignUp />)}
           />
         </Switch>
+        <Footer />
       </div>
     );
   }
