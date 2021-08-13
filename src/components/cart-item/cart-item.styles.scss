@@ -24,7 +24,7 @@
     &:hover {
       background: #c2c2c270;
     }
-    
+
     .icon {
       align-self: center;
       vertical-align: middle;
@@ -34,7 +34,6 @@
       margin-right: auto;
     }
   }
-
 
   .item-details {
     width: 28%;
@@ -47,6 +46,7 @@
     .name {
       font-size: 14px;
       font-weight: lighter;
+      padding-bottom: 10px;
     }
   }
 }

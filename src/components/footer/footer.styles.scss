@@ -1,0 +1,40 @@
+.footer-global {
+  display: block;
+  font-size: 11px;
+  line-height: 16px;
+  background-color: rgba(245, 243, 147, 0.63);
+  height: 90px;
+  padding: 25px 0;
+
+  .layout {
+    height: 30px;
+    padding: 0;
+    width: 70%;
+    background-color: red;
+    position: relative;
+    z-index: 1;
+
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 60px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    &::after {
+      clear: both;
+      content: "";
+      display: table;
+    }
+    .footer-content {
+      margin: 0 auto;
+      max-width: 517px;
+      text-align: center;
+      
+    }
+
+    .footer-menu {
+        color: #222;
+        text-decoration: none;
+    }
+  }
+}

@@ -39,3 +39,19 @@ export const moveItemFromWishlist = (cartItems, itemToMove) => {
         },
       ];
 };
+
+export const reduceItemQuantity = (cartItems, cartItemToReduce) => {
+  const existingCartItems = cartItems.find(
+    (item) => item.id === cartItemToReduce.id
+  );
+
+  if (existingCartItems.quantity === 1) {
+    return cartItems.filter((item) => item.id !== cartItemToReduce.id);
+  }
+
+  return cartItems.map((item) =>
+    item.id === cartItemToReduce.id
+      ? { ...item, quantity: item.quantity - 1 }
+      : item
+  );
+};

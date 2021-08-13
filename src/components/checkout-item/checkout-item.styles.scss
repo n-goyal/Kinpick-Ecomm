@@ -22,6 +22,22 @@
     width: 23%;
   }
 
+  .quantity {
+    display: flex;
+
+    .arrow {
+      cursor: pointer;
+      padding: 0 5px;
+      font-size: 1.2em;
+      align-self: center;
+    }
+
+    .value {
+      margin: 0 15px;
+      vertical-align: middle;
+    }
+  }
+
   .icon-container {
     height: auto;
     width: auto;

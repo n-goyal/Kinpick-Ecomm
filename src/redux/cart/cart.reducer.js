@@ -3,6 +3,7 @@ import {
   addItemsToCart,
   removeItemFromCart,
   moveItemFromWishlist,
+  reduceItemQuantity,
 } from "./cart.utils";
 
 const {
@@ -11,6 +12,7 @@ const {
   MOVE_ITEM_WISHLIST_TO_CART,
   REMOVE_ITEM_FROM_CART,
   MOVE_ITEM_CART_TO_WISHLIST,
+  REDUCE_QUANTITY,
 } = cartActionTypes;
 
 const INITIAL_STATE = {
@@ -49,6 +51,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         cartItems: removeItemFromCart(state.cartItems, action.payload),
       };
 
+    case REDUCE_QUANTITY:
+      return {
+        ...state,
+        cartItems: reduceItemQuantity(state.cartItems, action.payload),
+      };
     default:
       return state;
   }
