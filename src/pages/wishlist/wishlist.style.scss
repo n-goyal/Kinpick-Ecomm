@@ -1,9 +1,25 @@
 .item-container {
-  max-width: 80%;
+  max-width: 73%;
+  min-height: 70vh;
+
   margin-left: auto;
   margin-right: auto;
 
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+
+  .empty-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto;
+    text-align: center;
+    font-size: 1.5em;
+
+    .link {
+      margin-top: 10px;
+      text-decoration: underline;
+    }
+  }
 }

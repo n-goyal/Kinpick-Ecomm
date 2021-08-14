@@ -2,13 +2,16 @@
   width: 100%;
   display: flex;
   min-height: 80px;
-  border-bottom: 1px solid darkgrey;
   padding: 15px 0;
   font-size: 1.2em;
   align-items: center;
 
+  .actions {
+    display: flex;
+  }
+
   .image-container {
-    width: 23%;
+    width: 25%;
     padding-right: 0;
 
     img {
@@ -19,7 +22,18 @@
   .name,
   .quantity,
   .price {
-    width: 23%;
+    width: 25%;
+    padding-left: 15px;
+  }
+
+  .name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .actions {
+      margin: 20px 0;
+    }
   }
 
   .quantity {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -22,7 +23,12 @@ const Wishlist = ({ wishlistItems, wishlistItemsCount, history }) => {
       {wishlistItemsCount ? (
         wishlistItems.map((item) => <WishlistItem item={item} key={item.id} />)
       ) : (
-        <span>Add Items To Your Wishlist!</span>
+        <div className="empty-text">
+          <span>Your wishlist is empty😕!</span>
+          <Link className="link" to="/shop/en_in/men">
+            Add items to your wishlist, Now!
+          </Link>
+        </div>
       )}
     </div>
   );
