@@ -1,7 +1,7 @@
 .product {
-  margin: 10px 5px 10px 5px;
-  height: 40%;
-  flex: 1 0 21.5%;
+  height: 60%;
+  width: 24.25%;
+  margin-top: 1.75em;
 
   img {
     height: 100%;
@@ -45,7 +45,7 @@
     z-index: 1;
   }
 
-  .button {
-    height: 70%;
+  button {
+    height: 120% !important;
   }
 }

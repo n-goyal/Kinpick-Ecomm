@@ -3,11 +3,31 @@
   padding: 0 10px;
   margin: 5px 0;
 
+  img {
+    height: 100%;
+    width: 100%;
+  }
   .actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
+  .item-details {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top: -4.5em;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+    font-size: 1em;
+  }
+
+  .item-price {
+    background-color: #f6edcb;
+    padding: 0.5em;
+  }
+
   .button {
     height: auto !important;
     margin: 5px 0;

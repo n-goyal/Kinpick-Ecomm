@@ -14,11 +14,15 @@ import RemoveIconContainer from "../../containers/removeIconContainer/RemoveIcon
 import "./wishlist-item.style.scss";
 import { CustomButton } from "../custom-button/custom-button.component";
 
-const WishlistItem = ({ item, moveItemWishlistToCart,removeItemFromWishlist }) => {
+const WishlistItem = ({
+  item,
+  moveItemWishlistToCart,
+  removeItemFromWishlist,
+}) => {
   // modified product card component - styles are same as that of product card
   return (
     <div className="item-sizing">
-      <div className="product">
+      <div className="">
         <div className="image-container">
           <Link to="/:productName">
             <img src={item.image1url} alt={item.name} />
