@@ -9,7 +9,7 @@ import {
   removeItemFromWishlist,
 } from "../../redux/wishlist/wishlist.actions";
 
-import RemoveIconContainer from "../../containers/removeIconContainer/removeIcon";
+import RemoveIconContainer from "../../containers/removeIconContainer/RemoveIconContainer";
 
 import "./wishlist-item.style.scss";
 import { CustomButton } from "../custom-button/custom-button.component";

@@ -5,7 +5,7 @@ import {
   moveItemToWishlist,
 } from "../../redux/cart/cart.actions";
 
-import RemoveIconContainer from "../../containers/removeIconContainer/removeIcon";
+import RemoveIconContainer from "../../containers/removeIconContainer/RemoveIconContainer";
 
 import "./cart-item.styles.scss";
 

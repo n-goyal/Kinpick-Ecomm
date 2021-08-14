@@ -8,7 +8,7 @@ import {
 } from "../../redux/cart/cart.actions";
 
 import "./checkout-item.styles.scss";
-import RemoveIconContainer from "../../containers/removeIconContainer/removeIcon";
+import RemoveIconContainer from "../../containers/removeIconContainer/RemoveIconContainer";
 
 const CheckoutItem = ({
   moveItemToWishlist,
