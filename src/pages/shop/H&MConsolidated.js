@@ -44,9 +44,9 @@ const SHOP_DATA = [
         categoryItems: [
           {
             id: 0,
-            slug: "tshirts-tank-tops",
-            routeName: "/shop-by-product/tshirts-tank-tops/",
-            name: "Tshirts & Tanks",
+            slug: "jeans",
+            routeName: "/shop-by-product/jeans/",
+            name: "Jeans",
           },
           {
             id: 1,
@@ -70,25 +70,19 @@ const SHOP_DATA = [
             id: 4,
             slug: "trousers",
             routeName: "/shop-by-product/trousers/",
-            name: "Shoes",
+            name: "Trousers",
           },
           {
             id: 5,
             slug: "sportswear",
             routeName: "/shop-by-product/sportswear/",
-            name: "Sportswear",
+            name: "Sports Wear",
           },
           {
             id: 6,
             slug: "hoodies-sweatshirts",
             routeName: "/shop-by-product/hoodies-sweatshirts/",
             name: "Hoodies & Sweatshirts",
-          },
-          {
-            id: 7,
-            slug: "jackets-coats",
-            routeName: "/shop-by-product/jackets-coats/",
-            name: "Jackets & Coats",
           },
         ],
       },
